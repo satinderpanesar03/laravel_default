@@ -25,12 +25,12 @@ class AdminMiddleware
             }
             else
             {
-                return redirect('/dashboard')->with('status','Access Denied! as you are not as admin');
+                return redirect('admin/dashboard')->with('status','Access Denied! as you are not as admin');
             }
         }
         else
         {
-            return redirect('/login')->with('status','Please Login First');
+            return redirect('admin/login')->with('status','Please Login First');
         }
 
         

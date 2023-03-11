@@ -27,7 +27,7 @@
                                     class="img-fluid for-dark" src="{{ asset('assets/images/logo/logo_dark.png') }}"
                                     alt="looginpage"></a></div> --}}
                         <div class="login-main">
-                            <form class="theme-form" method="POST" action="{{ url('login') }}">
+                            <form class="theme-form" method="POST" action="{{ url('admin/login') }}">
                                 @csrf
                                 <h4>Sign in to your account</h4>
                                 <p>Enter your email & password to login</p>

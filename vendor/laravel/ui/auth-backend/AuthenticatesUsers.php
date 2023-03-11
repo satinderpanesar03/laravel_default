@@ -115,9 +115,11 @@ trait AuthenticatesUsers
             return $response;
         }
 
-        return $request->wantsJson()
-                    ? new JsonResponse([], 204)
-                    : redirect()->intended($this->redirectPath());
+        // return $request->wantsJson()
+        //             ? new JsonResponse([], 204)
+        //             : redirect()->intended($this->redirectPath());
+
+        return redirect('admin/home');
     }
 
     /**
@@ -175,9 +177,10 @@ trait AuthenticatesUsers
             return $response;
         }
 
-        return $request->wantsJson()
-            ? new JsonResponse([], 204)
-            : redirect('/');
+        // return $request->wantsJson()
+        //     ? new JsonResponse([], 204)
+        //     : redirect('/admin/login');
+        return redirect('admin/login');
     }
 
     /**

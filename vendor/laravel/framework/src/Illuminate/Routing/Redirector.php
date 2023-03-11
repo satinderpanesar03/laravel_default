@@ -104,7 +104,7 @@ class Redirector
      * @param  bool|null  $secure
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function intended($default = '/', $status = 302, $headers = [], $secure = null)
+    public function intended($default = 'admin/', $status = 302, $headers = [], $secure = null)
     {
         $path = $this->session->pull('url.intended', $default);
 
