@@ -378,12 +378,12 @@
                     <ul class="profile-dropdown onhover-show-div me-4" style="width: 180px;">
                    
                         <li><a href="{{ url('edit-employee/'.Auth::user()->id)}}"><i data-feather="user"></i><span>Edit Profile </span></a></li>
-                        <li><a href="{{ route('logout') }}" id="logout"
+                        <li><a href="{{ route('admin.logout') }}" id="logout"
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                                 <i data-feather="log-out"> </i><span>Log out</span>
                             </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
                               @csrf
                           </form>
                         </li>
