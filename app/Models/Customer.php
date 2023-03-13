@@ -22,6 +22,8 @@ class Customer extends Authenticatable
         'email',
         'password',
         'is_block',
+        'provider',
+        'provider_id',
         'created_by',
     ];
     /**

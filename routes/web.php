@@ -43,6 +43,8 @@ Route::group(['as'=>'customer.', 'namespace' => 'App\Http\Controllers\customer\A
     Route::get('register', 'LoginController@registerForm')->name('registerForm');
     Route::post('login', 'LoginController@login')->name('login');
     Route::post('register', 'LoginController@register')->name('register');
+    Route::get('social-login/{provider}', 'SocialController@redirect');
+    Route::get('login/{provider}/callback','SocialController@Callback');
 
     Route::group(['middleware' => 'customerCheck'], function () {
         Route::get('dashboard', function() {
