@@ -1,11 +1,13 @@
 <?php
 
+// use App\Http\Controllers\customer\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProspectController;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,8 +38,15 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.'], function () {
     });
 });
 
-// ___________________________ Admin & User Route ____________________________
-// Route::group(['middleware' => ['auth','is_User']], function () {
-    
+Route::group(['as'=>'customer.', 'namespace' => 'App\Http\Controllers\customer\Auth', ], function () {
+    Route::get('login', 'LoginController@loginForm')->name('loginForm');
+    Route::get('register', 'LoginController@registerForm')->name('registerForm');
+    Route::post('login', 'LoginController@login')->name('login');
+    Route::post('register', 'LoginController@register')->name('register');
 
-// });
+    Route::group(['middleware' => 'customerCheck'], function () {
+        Route::get('dashboard', function() {
+            return Auth::user();
+        });
+    });
+});

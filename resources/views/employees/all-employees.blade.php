@@ -15,7 +15,7 @@
 
 @section('breadcrumb-items')
     <li class="breadcrumb-item">Dashboard</li>
-    <li class="breadcrumb-item active">Manage Employees</li>
+    <li class="breadcrumb-item active">Manage Users</li>
 @endsection
 
 @section('content')
@@ -39,7 +39,6 @@
                                         <th>#</th>
                                         <th>Name</th>
                                         <th>Username</th>
-                                        <th>User Role</th>
                                         <th>Created By</th>
                                         {{-- <th>Status </th> --}}
                                         <th>Options</th>
@@ -51,7 +50,6 @@
                                         <td>{{$Sr++}}</td>
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->email }}</td>
-                                        <td>{{$item->role_as}}</td>
                                         <td>{{$item->users->name ?? ''}}</td>
                                         {{-- <td>
                                             <span class="text-success {{$item->status != 1 ? 'd-none':''}}">
